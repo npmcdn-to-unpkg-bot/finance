@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calories Tracker</title>
+
+    <link ref="stylesheet" href="/resources/css/style.css"/>
+
+    <script src="/resources/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="/resources/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/resources/node_modules/gulp-typescript/node_modules/typescript/lib/typescript.js"></script>
+    <script src="/resources/node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="/resources/node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <script src="/resources/node_modules/angular2/bundles/http.dev.js"></script>
+    <!--<script src="/resources/node_modules/angular2/bundles/router.dev.js"></script>-->
+
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true },
+            packages: {
+                'app': {
+                    //format: 'register', //?
+                    defaultExtension: 'ts'
+                }
+            }
+        });
+        System.import('./resources/app/main.ts')
+                //System.import('app/main')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+    <my-toh>ToH Loading...</my-toh>
+</body>
+</html>
