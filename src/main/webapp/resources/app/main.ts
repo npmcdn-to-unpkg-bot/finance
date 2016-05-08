@@ -1,11 +1,9 @@
-import {bootstrap}        from 'angular2/platform/browser';
-import { HTTP_PROVIDERS } from 'angular2/http';
+import { bootstrap }    from '@angular/platform-browser-dynamic';
 
-import 'rxjs/Rx';
+import { AppComponent } from './app.component';
 
-import { TohComponent }   from './toh/toh.component.ts';
+bootstrap(AppComponent);
 
-bootstrap(TohComponent, [HTTP_PROVIDERS]);
 
 /*
  Copyright 2016 Google Inc. All Rights Reserved.
