@@ -23,4 +23,6 @@ gen
 # Created by .ignore support plugin (hsz.mobi)
 
 src/main/webapp/resources/node_modules
+src/main/webapp/node_modules/*
+src/main/webapp/node_modules
 npm-debug.log

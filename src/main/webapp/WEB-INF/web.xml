@@ -7,7 +7,7 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <welcome-file-list>
-        <welcome-file>/resources/finance2.html</welcome-file>
+        <welcome-file>/resources/finance.html</welcome-file>
     </welcome-file-list>
 
 
