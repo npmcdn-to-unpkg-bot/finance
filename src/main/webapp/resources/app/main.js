@@ -1,6 +1,18 @@
-var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
-var app_component_1 = require('./app.component');
-platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent);
+System.register(['@angular/platform-browser-dynamic', './app.component'], function(exports_1) {
+    var platform_browser_dynamic_1, app_component_1;
+    return {
+        setters:[
+            function (platform_browser_dynamic_1_1) {
+                platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
+            },
+            function (app_component_1_1) {
+                app_component_1 = app_component_1_1;
+            }],
+        execute: function() {
+            platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent);
+        }
+    }
+});
 /*
  Copyright 2016 Google Inc. All Rights Reserved.
  Use of this source code is governed by an MIT-style license that

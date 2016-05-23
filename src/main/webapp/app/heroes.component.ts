@@ -6,37 +6,45 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
 @Component({
-  selector: 'my-heroes',
-  templateUrl: 'app/heroes.component.html',
-  styleUrls:  ['app/heroes.component.css'],
-  directives: [HeroDetailComponent]
+    selector: 'my-heroes',
+    templateUrl: 'app/heroes.component.html',
+    styleUrls: ['app/heroes.component.css'],
+    directives: [HeroDetailComponent]
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
-  selectedHero: Hero;
+    heroes:Hero[];
+    selectedHero:Hero;
+    errorMessage:string;
 
-  constructor(
-    private router: Router,
-    private heroService: HeroService) { }
+    constructor(private router:Router,
+                private heroService:HeroService) {
+    }
 
-  getHeroes() {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-  }
+    getHeroes() {
+        //this.heroService.getHeroes().then(heroes => this.heroes = heroes);
 
-  ngOnInit() {
-    this.getHeroes();
-  }
+        this.heroService.getHeroes()
+            .subscribe(
+                heroes => this.heroes = heroes,
+                error => this.errorMessage = <any>error);
+    }
 
-  onSelect(hero: Hero) { this.selectedHero = hero; }
+    ngOnInit() {
+        this.getHeroes();
+    }
 
-  gotoDetail() {
-    this.router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
-  }
+    onSelect(hero:Hero) {
+        this.selectedHero = hero;
+    }
+
+    gotoDetail() {
+        this.router.navigate(['HeroDetail', {id: this.selectedHero.id}]);
+    }
 }
 
 
 /*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+ Copyright 2016 Google Inc. All Rights Reserved.
+ Use of this source code is governed by an MIT-style license that
+ can be found in the LICENSE file at http://angular.io/license
+ */
