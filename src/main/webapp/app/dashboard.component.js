@@ -32,6 +32,7 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
                     var _this = this;
                     //this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice(1,5));
                     this.heroService.getHeroes().subscribe(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+                    ////
                 };
                 DashboardComponent.prototype.gotoDetail = function (hero) {
                     var link = ['HeroDetail', { id: hero.id }];
