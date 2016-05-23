@@ -1,34 +1,78 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var mock_heroes_1 = require('./mock-heroes');
-var core_1 = require('@angular/core');
-var HeroService = (function () {
-    function HeroService() {
+System.register(['./mock-heroes', '@angular/core', '@angular/http', 'rxjs/Observable'], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var mock_heroes_1, core_1, http_1, Observable_1;
+    var HeroService;
+    return {
+        setters:[
+            function (mock_heroes_1_1) {
+                mock_heroes_1 = mock_heroes_1_1;
+            },
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
+            }],
+        execute: function() {
+            HeroService = (function () {
+                function HeroService(http) {
+                    this.http = http;
+                    this._heroesUrl = 'http://localhost:8080/list'; // URL to web api
+                }
+                /*getHeroes() {
+                  return Promise.resolve(HEROES);
+                }*/
+                HeroService.prototype.getHeroes = function () {
+                    return this.http.get(this._heroesUrl)
+                        .map(this.extractData)
+                        .catch(this.handleError);
+                };
+                // See the "Take it slow" appendix
+                HeroService.prototype.getHeroesSlowly = function () {
+                    return new Promise(function (resolve) {
+                        return setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 2000);
+                    } // 2 seconds
+                     // 2 seconds
+                    );
+                };
+                HeroService.prototype.getHero = function (id) {
+                    return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
+                };
+                HeroService.prototype.extractData = function (res) {
+                    if (res.status < 200 || res.status >= 300) {
+                        throw new Error('Bad response status: ' + res.status);
+                    }
+                    var body = res.json();
+                    return body || {};
+                };
+                HeroService.prototype.handleError = function (error) {
+                    // In a real world app, we might send the error to remote logging infrastructure
+                    var errMsg = error.message || 'Server error';
+                    console.error(errMsg); // log to console instead
+                    return Observable_1.Observable.throw(errMsg);
+                };
+                HeroService = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+                ], HeroService);
+                return HeroService;
+                var _a;
+            })();
+            exports_1("HeroService", HeroService);
+        }
     }
-    HeroService.prototype.getHeroes = function () {
-        return Promise.resolve(mock_heroes_1.HEROES);
-    };
-    // See the "Take it slow" appendix
-    HeroService.prototype.getHeroesSlowly = function () {
-        return new Promise(function (resolve) {
-            return setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 2000);
-        } // 2 seconds
-         // 2 seconds
-        );
-    };
-    HeroService.prototype.getHero = function (id) {
-        return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
-    };
-    HeroService = __decorate([
-        core_1.Injectable()
-    ], HeroService);
-    return HeroService;
-})();
-exports.HeroService = HeroService;
+});
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
