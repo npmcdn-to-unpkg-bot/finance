@@ -8,14 +8,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 
 @Component({
     selector: 'my-app',
-    template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a [routerLink]="['Dashboard']">Dashboard</a>
-      <a [routerLink]="['Heroes']">Heroes</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+    templateUrl: 'app/menu.html',
     styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [
@@ -36,13 +29,13 @@ import { HeroDetailComponent } from './hero-detail.component';
         component: HeroDetailComponent
     },
     {
-        path: '/heroes',
-        name: 'Heroes',
+        path: '/companies',
+        name: 'CompanyList',
         component: HeroesComponent
     }
 ])
 export class AppComponent {
-    title = 'Tour of Heroes';
+    title = 'Analysis';
 }
 
 

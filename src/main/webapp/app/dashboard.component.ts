@@ -15,13 +15,14 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private heroService: HeroService) {
-  }
+    private heroService: HeroService
+    //private _runtimeCompiler: RuntimeCompiler
+  ) {}
+
 
   ngOnInit() {
-    //this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice(1,5));
+      //this._runtimeCompiler.clearCache();
       this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes.slice(1, 5));
-    ////
   }
 
   gotoDetail(hero: Hero) {
