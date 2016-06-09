@@ -28,7 +28,7 @@ public class CompanyController {
      */
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = { "/", "/list" })
-    public List<Company> listCompanies() {
+    public List<Company> getCompanies() {
         List<Company> companyList = service.getAll();
         return companyList;
     }

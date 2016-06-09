@@ -33,12 +33,12 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = 'Tour of Heroes';
+                    this.title = 'Analysis';
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['Heroes']\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
+                        templateUrl: 'app/menu.html',
                         styleUrls: ['app/app.component.css'],
                         directives: [router_deprecated_1.ROUTER_DIRECTIVES],
                         providers: [
@@ -59,8 +59,8 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
                             component: hero_detail_component_1.HeroDetailComponent
                         },
                         {
-                            path: '/heroes',
-                            name: 'Heroes',
+                            path: '/companies',
+                            name: 'CompanyList',
                             component: heroes_component_1.HeroesComponent
                         }
                     ]), 

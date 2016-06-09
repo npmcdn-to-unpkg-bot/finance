@@ -30,9 +30,8 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
                 }
                 DashboardComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    //this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice(1,5));
+                    //this._runtimeCompiler.clearCache();
                     this.heroService.getHeroes().subscribe(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
-                    ////
                 };
                 DashboardComponent.prototype.gotoDetail = function (hero) {
                     var link = ['HeroDetail', { id: hero.id }];
