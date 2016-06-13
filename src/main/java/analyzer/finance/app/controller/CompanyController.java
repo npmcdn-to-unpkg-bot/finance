@@ -1,7 +1,7 @@
 package analyzer.finance.app.controller;
 
 import analyzer.finance.app.model.Company;
-import analyzer.finance.app.service.CompanyService;
+import analyzer.finance.app.service.ICompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import java.util.List;
 public class CompanyController {
 
     @Autowired
-    CompanyService service;
+    ICompanyService companyService;
 
     @Autowired
     MessageSource messageSource;
@@ -29,7 +29,7 @@ public class CompanyController {
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = { "/", "/list" })
     public List<Company> getCompanies() {
-        List<Company> companyList = service.getAll();
+        List<Company> companyList = companyService.getAll();
         return companyList;
     }
 }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'; //todo ?
 
-import { HeroService } from './hero.service';
-import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { CompanyListComponent } from './companyList/companyList.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import {HeroService} from './oldstuff/hero.service'; // todo
 
 @Component({
     selector: 'my-app',
@@ -23,15 +23,15 @@ import { HeroDetailComponent } from './hero-detail.component';
         component: DashboardComponent,
         useAsDefault: true
     },
-    {
+    /*{
         path: '/detail/:id',
         name: 'HeroDetail',
         component: HeroDetailComponent
-    },
+    },*/
     {
         path: '/companies',
         name: 'CompanyList',
-        component: HeroesComponent
+        component: CompanyListComponent
     }
 ])
 export class AppComponent {

@@ -19,7 +19,7 @@ public class Forecast {
     private Company company;
 
     @Column(name = "date", columnDefinition="DATETIME")
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "realRate")

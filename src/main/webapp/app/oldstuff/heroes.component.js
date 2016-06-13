@@ -48,8 +48,8 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero-detail.c
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',
-                        templateUrl: 'app/heroes.component.html',
-                        styleUrls: ['app/heroes.component.css'],
+                        templateUrl: './heroes.component.html',
+                        styleUrls: ['./heroes.component.css'],
                         directives: [hero_detail_component_1.HeroDetailComponent]
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof router_deprecated_1.Router !== 'undefined' && router_deprecated_1.Router) === 'function' && _a) || Object, hero_service_1.HeroService])

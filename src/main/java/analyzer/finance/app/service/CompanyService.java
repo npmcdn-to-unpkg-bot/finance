@@ -14,6 +14,7 @@ import java.util.List;
 
 
 @Service("companyService")
+//@Service
 @Transactional
 public class CompanyService implements ICompanyService {
 

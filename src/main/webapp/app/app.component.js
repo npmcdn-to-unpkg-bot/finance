@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router-deprecated', './hero.service', './dashboard.component', './heroes.component', './hero-detail.component'], function(exports_1) {
+System.register(['@angular/core', '@angular/router-deprecated', './companyList/companyList.component', './dashboard/dashboard.component', './oldstuff/hero.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_deprecated_1, hero_service_1, dashboard_component_1, heroes_component_1, hero_detail_component_1;
+    var core_1, router_deprecated_1, companyList_component_1, dashboard_component_1, hero_service_1;
     var AppComponent;
     return {
         setters:[
@@ -18,17 +18,14 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
             function (router_deprecated_1_1) {
                 router_deprecated_1 = router_deprecated_1_1;
             },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
+            function (companyList_component_1_1) {
+                companyList_component_1 = companyList_component_1_1;
             },
             function (dashboard_component_1_1) {
                 dashboard_component_1 = dashboard_component_1_1;
             },
-            function (heroes_component_1_1) {
-                heroes_component_1 = heroes_component_1_1;
-            },
-            function (hero_detail_component_1_1) {
-                hero_detail_component_1 = hero_detail_component_1_1;
+            function (hero_service_1_1) {
+                hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -36,6 +33,7 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
                     this.title = 'Analysis';
                 }
                 AppComponent = __decorate([
+                    // todo
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/menu.html',
@@ -53,15 +51,15 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
                             component: dashboard_component_1.DashboardComponent,
                             useAsDefault: true
                         },
-                        {
+                        /*{
                             path: '/detail/:id',
                             name: 'HeroDetail',
-                            component: hero_detail_component_1.HeroDetailComponent
-                        },
+                            component: HeroDetailComponent
+                        },*/
                         {
                             path: '/companies',
                             name: 'CompanyList',
-                            component: heroes_component_1.HeroesComponent
+                            component: companyList_component_1.CompanyListComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

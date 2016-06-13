@@ -19,14 +19,14 @@ public class Parsing {
     @JoinColumn(name = "companyId")
     private Company company;
 
-      @Column(name = "date", columnDefinition="DATETIME")
-    @Temporal(TemporalType.DATE)
+    @Column(name = "date", columnDefinition="DATETIME")
+    //@Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "source")
     private String source;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parsingData")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parsing")
     private List<ParsingData> parsingDataList;
 
     public List<ParsingData> getParsingDataList() {

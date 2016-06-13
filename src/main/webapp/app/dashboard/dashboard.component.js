@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router-deprecated', './hero.service'], function(exports_1) {
+System.register(['@angular/core', '@angular/router-deprecated', '../oldstuff/hero.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -40,8 +40,8 @@ System.register(['@angular/core', '@angular/router-deprecated', './hero.service'
                 DashboardComponent = __decorate([
                     core_1.Component({
                         selector: 'my-dashboard',
-                        templateUrl: 'app/dashboard.component.html',
-                        styleUrls: ['app/dashboard.component.css']
+                        templateUrl: 'app/dashboard/dashboard.component.html',
+                        styleUrls: ['app/dashboard/dashboard.component.css']
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof router_deprecated_1.Router !== 'undefined' && router_deprecated_1.Router) === 'function' && _a) || Object, hero_service_1.HeroService])
                 ], DashboardComponent);
